@@ -1,54 +1,19 @@
 Bootstrap: docker
 From: ubuntu
 
-%environment
-    VADER=badguy
-    LUKE=goodguy
-    SOLO=someguy
-    export VADER LUKE SOLO
+# This is a example comment.
 
-%labels
-   Maintainer Vanessasaur
+%help
+Help me. I'm in the container.
 
-##############################
-# foo
-##############################
+%setup
+    touch ${SINGULARITY_ROOTFS}/tacos.txt
+    touch avocados.txt
 
-%apprun foo
-    exec echo "RUNNING FOO"
+%post
+    echo 'export JAWA_SEZ=wutini' >> $SINGULARITY_ENVIRONMENT
 
-%applabels foo
-   BESTAPP=FOO
-   export BESTAPP
-
-%appinstall foo
-   touch foo.exec
-
-%appenv foo
-    SOFTWARE=foo
-    export SOFTWARE
-
-%apphelp foo
-    This is the help for foo.
-
-%appfiles foo
-   avocados.txt
-
-
-##############################
-# bar
-##############################
-
-%apphelp bar
-    This is the help for bar.
-
-%applabels bar
-   BESTAPP=BAR
-   export BESTAPP
-
-%appinstall bar
-    touch bar.exec
-
-%appenv bar
-    SOFTWARE=bar
-    export SOFTWARE
+%runscript
+    echo "Rooooar!"
+    echo "Arguments received: $*"
+    exec echo "$@"
