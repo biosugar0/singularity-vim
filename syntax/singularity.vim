@@ -28,6 +28,6 @@ syn keyword ShellCommands acpid add-shell addgroup adduser adjtimex apk arp arpi
 hi def link singularityString String
 hi def link singularityKeyword Keyword
 hi def link singularityComment Comment
-hi def link Emails Identifier
-hi def link Urls Identifier
+hi def link Emails *Underlined
+hi def link Urls *Underlined
 hi def link ShellCommands Function
