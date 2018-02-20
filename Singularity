@@ -12,6 +12,7 @@ Help me. I'm in the container.
 
 %post
     echo 'export JAWA_SEZ=wutini' >> $SINGULARITY_ENVIRONMENT
+    wget https://github.com/biosugar0/singularity-vim
 
 %runscript
     echo "Rooooar!"
