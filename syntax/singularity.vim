@@ -14,8 +14,8 @@ let b:current_syntax = "singularity"
 syn match singularityKeyword /\v^\s*(Bootstrap:|From:|OSVersion:|MirrorURL:|Include:)\s/
 syn match singularityKeyword /\v^\s*(\%help|\%setup|\%files|\%labels|\%environment)$/
 syn match singularityKeyword /\v^\s*(\%runscript|\%test|\%post)$/
-syn match singularityKeyword /\v^\s*(\%apprun|\%applabels|\%appinstall)$/
-syn match singularityKeyword /\v^\s*(\%appenv|\%apphelp|\%appfiles)$/
+syn match singularityKeyword /\v^\s*(\%apprun|\%applabels|\%appinstall)\s/
+syn match singularityKeyword /\v^\s*(\%appenv|\%apphelp|\%appfiles)\s/
 
 syn region Emails start=/</ end=/>/ contains=@ oneline
 syn match Urls /\(http\|https\|ssh\|hg\|git\)\:\/\/[a-zA-Z0-9\/\-\.]\+/

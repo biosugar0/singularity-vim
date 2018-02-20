@@ -1,14 +1,54 @@
 Bootstrap: docker
-From: openjdk:alpine
+From: ubuntu
 
-%post
+%environment
+    VADER=badguy
+    LUKE=goodguy
+    SOLO=someguy
+    export VADER LUKE SOLO
 
-    wget http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.36.zip
-    unzip Trimmomatic-0.36.zip
-    rm Trimmomatic-0.36.zip
-    mv Trimmomatic-0.36 /data/
-    echo $HOME
-    pwd
+%labels
+   Maintainer Vanessasaur
 
-%runscript
-    java -jar /data/trimmomatic-0.36.jar "$@"
+##############################
+# foo
+##############################
+
+%apprun foo
+    exec echo "RUNNING FOO"
+
+%applabels foo
+   BESTAPP=FOO
+   export BESTAPP
+
+%appinstall foo
+   touch foo.exec
+
+%appenv foo
+    SOFTWARE=foo
+    export SOFTWARE
+
+%apphelp foo
+    This is the help for foo.
+
+%appfiles foo
+   avocados.txt
+
+
+##############################
+# bar
+##############################
+
+%apphelp bar
+    This is the help for bar.
+
+%applabels bar
+   BESTAPP=BAR
+   export BESTAPP
+
+%appinstall bar
+    touch bar.exec
+
+%appenv bar
+    SOFTWARE=bar
+    export SOFTWARE
