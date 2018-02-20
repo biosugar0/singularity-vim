@@ -1,1 +1,1 @@
-autocmd BufRead,BufNewFile Singularity set ft=singularity.sh
+autocmd BufRead,BufNewFile Singularity set ft=singularity.bash
