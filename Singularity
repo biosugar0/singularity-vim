@@ -1,7 +1,7 @@
 Bootstrap: docker
-FROM: openjdk:alpine
+From: openjdk:alpine
 
-%Post
+%post
 
     wget http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.36.zip
     unzip Trimmomatic-0.36.zip
